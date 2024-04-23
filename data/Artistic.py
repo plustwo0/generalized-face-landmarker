@@ -15,7 +15,7 @@ class StyleDataSet(Dataset):
     def __init__(self, root, is_train, transform=None):
         self.Image_size = cfg.MODEL.IMG_SIZE
         self.is_train = is_train
-        self.root = root
+        self.root = os.path.join(root, 'images')
         self.number_landmarks = 68
 
         self.Fraction = cfg.W300.FRACTION
@@ -25,7 +25,7 @@ class StyleDataSet(Dataset):
         if is_train:
             self.annotation_file = os.path.join(root, 'train_list.txt')
         else:
-            self.annotation_file = os.path.join(root, 'test_list.txt')
+            self.annotation_file = os.path.join(root, 'test_list_all.txt')
 
         self.database = self.get_image()
 
@@ -92,7 +92,7 @@ class StyleDataSet(Dataset):
         return meta
 
 
-def get_cartoon_dataloader(opt):
+def get_cartoon_dataloader(batch_size, opt):
     normalize = transforms.Compose(
         [transforms.ToTensor(),
          transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])]
@@ -101,7 +101,7 @@ def get_cartoon_dataloader(opt):
     train_dataset = StyleDataSet(root=opt.tgt_data, is_train=True, transform=normalize)
     train_loader = torch.utils.data.DataLoader(
         train_dataset,
-        batch_size=opt.batch_size,
+        batch_size=batch_size,
         shuffle=True,
         drop_last=True
     )

@@ -1,8 +1,8 @@
 # Generalizable Face Landmarking Guided by Conditional Face Warping (CVPR 2024)
 This is the official repository for the following paper:
 
->**Generalizable Face Landmarking Guided by Conditional Face Warping**  [[paper]](https://openreview.net/pdf?id=wB2R7QQncw) [[project page]](https://plustwo0.github.io/project-face-landmarker/)<br>
- <br>Jiayi Liang, Haotian Liu, Hongteng Xu, Dixin Luo<br>
+>**Generalizable Face Landmarking Guided by Conditional Face Warping** [[paper]](https://openreview.net/pdf?id=wB2R7QQncw) [[arxiv]](https://arxiv.org/abs/2404.12322) [[project page]](https://plustwo0.github.io/project-face-landmarker/)<br>
+ <br>Jiayi Liang*, Haotian Liu*, Hongteng Xu, Dixin Luo<br>
  Accepted by CVPR 2024.
 
 
@@ -23,51 +23,49 @@ They are trained in an alternative optimization framework.
 In our implmentation, we employ SLPT as our backbone and locate the model in ```Landmark2``` folder. 
 For the reproduction on other detectors, substitute the ```Landmark2``` folder with target model and make modifications in ```train.py```.
 
-# Prepare
 
-## Data
+# Data Preparation
 
-
-### Source Domain
+## Source Domain
 Download images and annotations of 300-W from [ibug](https://ibug.doc.ic.ac.uk/resources/300-W/).
 
 We select frontal faces from the trainset of 300W as our training data, and list of image path ```300W_frontal_train_list.txt``` can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1LPYKxb2e-7a7Ovy2tPBPKad74HxxGZRG?usp=sharing).
 
 Your directory should be like:
    ```
-   Dataset
-   │
-   └──300W
-      │
-      └───300W_frontal_train_list.txt
-      └───frontal_train
-          └───261068_1.jpg
-          │
-          └───...
-      └───frontal_train_label
-          └───261068_1.jpg.npy
-          │
-          └───...
-      └───test_list.txt
-      └───test_list_common.txt
-      └───test_list_challenge.txt
-      └───lfpw
-          └───trainset
-          └───testset
-              └───image_0001.png
-              └───image_0001.pts
-              │
-              └───...
-      │───helen
-          │
-          └───...
-      │───ibug
-          │
-          └───...
+     Dataset
+     │
+     └──300W
+        │
+        └───300W_frontal_train_list.txt
+        └───frontal_train
+            └───261068_1.jpg
+            │
+            └───...
+        └───frontal_train_label
+            └───261068_1.jpg.npy
+            │
+            └───...
+        └───test_list.txt
+        └───test_list_common.txt
+        └───test_list_challenge.txt
+        └───lfpw
+            └───trainset
+            └───testset
+                └───image_0001.png
+                └───image_0001.pts
+                │
+                └───...
+        └───helen
+            │
+            └───...
+        └───ibug
+            │
+            └───...
 
    ```
 
-### Target Domain
+## Target Domain
 - Download CariFace according to [CariFace Dataset](https://github.com/Juyong/CaricatureFace).
 The split of training and testing set can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1_oQhYCOJastWGhy6tFDUEivgj5GMLUCe?usp=sharing).
 
@@ -77,34 +75,34 @@ The split of training and testing set can be downloaded from [Google Drive](http
 
 Your directory should be like:
    ```
-   Dataset
-   │
-   └──CariFace_dataset
-      │
-      └───images
-          └───00005.jpg
-          │
-          └───...
-      └───landmarks
-          └───00005.jpg.npy
-          │
-          └───...
-      └───train_list.txt
-      └───test_list.txt
-   │
-   └──AF_dataset
-      │
-      └───images
-          └───0.png
-          │
-          └───...
-      └───landmarks
-          └───0.png.npy
-          │
-          └───...
-      └───train_list.txt
-      └───test_list.txt
-      └───test_list_all.txt
+     Dataset
+     │
+     └──CariFace_dataset
+        │
+        └───images
+            └───00005.jpg
+            │
+            └───...
+        └───landmarks
+            └───00005.jpg.npy
+            │
+            └───...
+        └───train_list.txt
+        └───test_list.txt
+     │
+     └──AF_dataset
+        │
+        └───images
+            └───0.png
+            │
+            └───...
+        └───landmarks
+            └───0.png.npy
+            │
+            └───...
+        └───train_list.txt
+        └───test_list.txt
+        └───test_list_all.txt
    ```
 
 # Train
@@ -132,5 +130,7 @@ python test_Artistic.py --checkpoint path/to/model/weights
 ```
 
 # Citation
+If our work is helpful for your research, please cite our paper:
+
 
 # Aknowledgement
