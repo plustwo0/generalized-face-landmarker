@@ -31,6 +31,8 @@ Download images and annotations of 300-W from [ibug](https://ibug.doc.ic.ac.uk/r
 
 We select frontal faces from the trainset of 300W as our training data, and list of image path ```300W_frontal_train_list.txt``` can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1LPYKxb2e-7a7Ovy2tPBPKad74HxxGZRG?usp=sharing).
 
+For `Mirror.txt`, please refer to [Google Drive](https://drive.google.com/drive/folders/1pweAcY-oQd1r1S9XLs50lmQGRAja6yOt).
+
 Your directory should be like:
    ```
      Dataset
@@ -46,6 +48,7 @@ Your directory should be like:
             └───261068_1.jpg.npy
             │
             └───...
+        └───train_list.txt
         └───test_list.txt
         └───test_list_common.txt
         └───test_list_challenge.txt
@@ -62,6 +65,7 @@ Your directory should be like:
         └───ibug
             │
             └───...
+        └───Mirror.txt
 
    ```
 
