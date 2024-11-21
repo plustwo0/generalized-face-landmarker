@@ -1,7 +1,7 @@
 # Generalizable Face Landmarking Guided by Conditional Face Warping (CVPR 2024)
 This is the official repository for the following paper:
 
->**Generalizable Face Landmarking Guided by Conditional Face Warping** [[paper]](https://openreview.net/pdf?id=wB2R7QQncw) [[arxiv]](https://arxiv.org/abs/2404.12322) [[project page]](https://plustwo0.github.io/project-face-landmarker/)<br>
+>**Generalizable Face Landmarking Guided by Conditional Face Warping** [[paper]](https://openaccess.thecvf.com/content/CVPR2024/html/Liang_Generalizable_Face_Landmarking_Guided_by_Conditional_Face_Warping_CVPR_2024_paper.html) [[arxiv]](https://arxiv.org/abs/2404.12322) [[project page]](https://plustwo0.github.io/project-face-landmarker/)<br>
  <br>Jiayi Liang*, Haotian Liu*, Hongteng Xu, Dixin Luo<br>
  Accepted by CVPR 2024.
 
@@ -135,6 +135,13 @@ python test_Artistic.py --checkpoint path/to/model/weights
 
 # Citation
 If our work is helpful for your research, please cite our paper:
-
-
-# Aknowledgement
+```
+@InProceedings{Liang_2024_CVPR,
+    author    = {Liang, Jiayi and Liu, Haotian and Xu, Hongteng and Luo, Dixin},
+    title     = {Generalizable Face Landmarking Guided by Conditional Face Warping},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {2425-2435}
+}
+```
